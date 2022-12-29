@@ -1,0 +1,18 @@
+{
+  "toDo": "مهماتي",
+  "done": "تم !",
+  "delete": "حذف",
+  "addNewTask": "أضف مهمه جديدة",
+  "langauge": "اللغة",
+  "theme": "السمة",
+  "arabic": "عربي",
+  "english": "انجليزي",
+  "dark": "داكن",
+  "light": "فاتح",
+  "edaiteTask": "تعديل المهمة",
+  "taskDetalis": "الشرح",
+  "selectTime": "أختر الوقت",
+  "title": "اسم المهمة",
+  "add": "اضف"
+
+}
