@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../style/my_theme.dart';
 
 class settingProvider extends ChangeNotifier {
@@ -7,14 +7,12 @@ class settingProvider extends ChangeNotifier {
   late bool isSelectEnglish = true;
   late String appLang = 'en';
   late ThemeData myTheme=MyTheme.lightTheme;
-  void changeTheme(ThemeData theme) {
+  void changeTheme(ThemeData theme,BuildContext context) {
     myTheme = theme;
-    isLight=!isLight;
     notifyListeners();
   }
-  void changeLang(String lang){
+  void changeLang(String lang,BuildContext context){
     appLang=lang;
-    isSelectEnglish=!isSelectEnglish;
     notifyListeners();
   }
 }

@@ -31,7 +31,9 @@ class settingsScreen extends StatelessWidget {
               margin: EdgeInsets.all(20),
               width: MediaQuery.of(context).size.width*0.8,
               height: MediaQuery.of(context).size.height*0.08,
-              child: Text(AppLocalizations.of(context)!.light,
+              child: Text(pro.isLight?AppLocalizations.of(context)!.light
+                :AppLocalizations.of(context)!.dark
+                ,
                 style: Theme.of(context).textTheme.subtitle1?.copyWith(),
               ),
               decoration: BoxDecoration(
@@ -61,7 +63,9 @@ class settingsScreen extends StatelessWidget {
               margin: EdgeInsets.all(20),
               width: MediaQuery.of(context).size.width*0.8,
               height: MediaQuery.of(context).size.height*0.08,
-              child: Text(AppLocalizations.of(context)!.english,
+              child: Text(pro.isSelectEnglish?AppLocalizations.of(context)!.english
+                :
+                AppLocalizations.of(context)!.arabic,
                 style: Theme.of(context).textTheme.subtitle1?.copyWith(
                   // color:             //تغير اللون
                 ),

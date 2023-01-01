@@ -5,16 +5,18 @@ import 'package:untitled/shared/componente/componetes.dart';
 import 'package:untitled/shared/provider/addTaskSheet_provider.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:untitled/shared/provider/setting-provider.dart';
 
 class addBtnSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var pro=Provider.of<addTaskSheetProvider>(context);
+    var proSetting=Provider.of<settingProvider>(context);
     return SingleChildScrollView(
 
       child: Container(
         decoration: BoxDecoration(
-            color: Colors.white,
+            color:proSetting.isLight? Colors.white:Color(0xFF707070),
             borderRadius: BorderRadius.only(topLeft: Radius.circular(15),
                 topRight: Radius.circular(15))
         ),
@@ -24,7 +26,7 @@ class addBtnSheet extends StatelessWidget {
           children: [
             Text(AppLocalizations.of(context)!.addNewTask,
               style: Theme.of(context).textTheme.headline1!.copyWith(
-                color: Colors.black
+                color:proSetting.isLight? Colors.black:Colors.white
             ),
               textAlign: TextAlign.center,
             ),
@@ -35,7 +37,10 @@ class addBtnSheet extends StatelessWidget {
               children: [
                 TextFormField(
                   decoration: InputDecoration(
-                      labelText: AppLocalizations.of(context)!.title
+                      labelText: AppLocalizations.of(context)!.title,
+                    labelStyle: TextStyle(
+                      color: proSetting.isLight?Colors.black:Colors.white
+                    )
                   ),
                   onChanged: (v){
                     pro.onChangeTitle(v);
@@ -49,6 +54,9 @@ class addBtnSheet extends StatelessWidget {
                 TextFormField(
                   decoration: InputDecoration(
                     labelText:AppLocalizations.of(context)!.taskDetalis,
+                      labelStyle: TextStyle(
+                          color: proSetting.isLight?Colors.black:Colors.white
+                      )
                   ),
                   onChanged: (v){
                     pro.onChangeDesc(v);
@@ -63,13 +71,19 @@ class addBtnSheet extends StatelessWidget {
                   minLines: 4,
                 ),
                 SizedBox(height: 12,),
-                Text(AppLocalizations.of(context)!.selectTime),
+                Text(AppLocalizations.of(context)!.selectTime,style: TextStyle(
+                    color: proSetting.isLight?Colors.black:Colors.white
+                ),),
                 SizedBox(height: 12,),
                 InkWell(
                     onTap: (){
                       pro.chooseDate(context);
                       },
-                    child: Text('${pro.selectedDate.year}-${pro.selectedDate.month}-${pro.selectedDate.day}',textAlign: TextAlign.center,)),
+                    child: Text('${pro.selectedDate.year}-${pro.selectedDate.month}-${pro.selectedDate.day}',textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: proSetting.isLight?Colors.black:Colors.white
+                        ),
+                    )),
                 SizedBox(height: 20,),
               ],
             )
