@@ -28,3 +28,12 @@ void deleteTask(taskModel task){
 void updateFire(taskModel task){
   getColliction().doc(task.id).update({'isDone':task.isDone?false:true});
 }
+Future<void>editeTask(taskModel task){
+  CollectionReference todiref= getColliction();
+
+  return todiref.doc(task.id).update({
+
+    'title':task.tittle,
+    'des':task.descrption,
+  }
+  );}

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:untitled/layout/home_layout.dart';
 import 'package:untitled/modules/settings/setting_screen.dart';
+import 'package:untitled/modules/edit task/edit_task_screen.dart';
 import 'package:untitled/modules/taskes_list/tasks_list_screen.dart';
 import 'package:untitled/shared/provider/addTaskSheet_provider.dart';
 import 'package:untitled/shared/provider/app_provider.dart';
@@ -34,6 +35,7 @@ class myApp extends StatelessWidget {
         homeLayout.routName: (buildContext) => homeLayout(),
         tasksListScreen.routeName: (buildContext) => tasksListScreen(),
         settingsScreen.routeName: (buildContext) => settingsScreen(),
+        editTaskScreen.routeName:(buildContext)=> editTaskScreen(),
       },
       localizationsDelegates: [
         AppLocalizations.delegate, // Add this line
