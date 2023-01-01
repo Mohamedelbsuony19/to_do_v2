@@ -16,13 +16,15 @@ class langBtnSheet extends StatelessWidget{
         children: [
           InkWell(
               onTap: () {
-                pro.changeLang('en');
+               pro.isSelectEnglish=true;
+                pro.changeLang('en',context);
               },
               child: getLangRow(pro.isSelectEnglish ? 'English' : 'انجليزي',
                   pro.isSelectEnglish, context)),
           InkWell(
               onTap: () {
-                pro.changeLang('ar');
+                pro.isSelectEnglish=false;
+                pro.changeLang('ar',context);
               },
               child: getLangRow(pro.isSelectEnglish ? 'Arabic' : 'عربي',
                   pro.isSelectEnglish ? false : true, context)),

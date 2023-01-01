@@ -16,13 +16,15 @@ class themeBtnSheet extends StatelessWidget{
         children: [
           InkWell(
               onTap: () {
-                pro.changeTheme(MyTheme.lightTheme);
+                pro.isLight=true;
+                pro.changeTheme(MyTheme.lightTheme,context);
               },
               child: getLangRow(pro.isSelectEnglish ? 'Light' : 'فاتح',
                   pro.isLight, context)),
           InkWell(
               onTap: () {
-                pro.changeTheme(MyTheme.Darkheme);
+                pro.isLight=false;
+                pro.changeTheme(MyTheme.Darkheme,context);
               },
               child: getLangRow(pro.isSelectEnglish ? 'Dark' : 'داكن',
                   pro.isLight ? false : true, context)),
