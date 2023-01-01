@@ -1,0 +1,17 @@
+{
+  "toDo": "To Do",
+  "done": "Done !",
+  "delete": "Delete",
+  "addNewTask": "Add New Task",
+  "langauge": "Langauge",
+  "theme": "Theme",
+  "arabic": "Arbic",
+  "english": "English",
+  "dark": "Dark",
+  "light": "Light",
+  "edaiteTask": "Edit Task",
+  "taskDetalis": "Task Details",
+  "selectTime": "Select Time",
+  "title": "Title",
+  "add": "Add"
+}
